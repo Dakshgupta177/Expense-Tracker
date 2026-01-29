@@ -1,11 +1,11 @@
-function App() {
+import React from "react";
+import Sidebar from "./Components/Sidebar";
+
+export default function App() {
   return (
-    <div className="bg-green-600 h-screen p-10">
-      <p className="text-xl text-white font-bold">
-        Hello World
-      </p>
+    <div className="bg-[#F6F6F8] min-h-screen">
+      <Sidebar />
     </div>
   )
 }
 
-export default App
