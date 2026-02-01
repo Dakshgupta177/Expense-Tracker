@@ -10,7 +10,7 @@ function Sidebar() {
         
         <div className="flex items-center gap-3 mb-10">
           <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
-            logo
+            <img src="/logo.png" alt="" className=""/>
           </div>
 
           <div>
