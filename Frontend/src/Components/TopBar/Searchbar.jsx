@@ -1,27 +1,26 @@
 import React, { useState } from "react";
+import Profilebar from "./Profilebar";
 
 function Searchbar() {
   const [lightMode, setLightMode] = useState(false);
-  const [searchMode, setSearchMode] = useState(false);
 
-  const onSearchBarClick = () => setSearchMode(prev => !prev);
 
   const onLightModeClick = () => setLightMode(prev => !prev);
 
 
   return (
-    <div className="flex w-[80%] bg-white items-center justify-between px-4 ">
+    <div className="flex w-full bg-white items-center justify-between px-4">
 
       <div className="font-semibold ">
-        <h3 className="">Overview</h3>
+        <h3 className="text-3xl font-bold">Overview</h3>
       </div>
 
-      
+      <div className="flex p-3">
+        <div className="flex items-center gap-6 mr-8">
 
-      <div className="flex items-center gap-7 justify-between">
 
 
-        <div className="flex items-center gap-2 border px-2 py-1 rounded-md text-black bg-[#e5e7eb] h-9 justify-between">
+        <div className="flex items-center gap-2 border px-2 py-1 rounded-md text-black bg-[#e5e7eb]">
         <img src="/icons/search.png" alt="search" className="w-4 h-4" />
         <input 
           type="text"
@@ -30,8 +29,6 @@ function Searchbar() {
         />
       </div>
 
-
-      
         <img
           onClick={onLightModeClick}
           src={lightMode ? "/icons/lightmode.png" : "/icons/darkmode.png"}
@@ -42,8 +39,18 @@ function Searchbar() {
         <img
           src="/icons/notification.png"
           alt="notification"
-          className="w-5"
+          className="w-5 cursor-pointer"
         />
+      </div>
+
+      <div>
+        <Profilebar 
+        profileName={"Md Laraib Alam"}
+        plan={"Premium Plan"}
+        profilePhoto={"/icons/user.png"}
+        />
+      </div>
+
       </div>
 
     </div>
