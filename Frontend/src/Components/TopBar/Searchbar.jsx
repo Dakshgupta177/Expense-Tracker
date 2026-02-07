@@ -2,8 +2,12 @@ import React, { useState } from "react";
 
 function Searchbar() {
   const [lightMode, setLightMode] = useState(false);
+  const [searchMode, setSearchMode] = useState(false);
+
+  const onSearchBarClick = () => setSearchMode(prev => !prev);
 
   const onLightModeClick = () => setLightMode(prev => !prev);
+
 
   return (
     <div className="flex w-[80%] bg-white items-center justify-between px-4 ">
@@ -14,15 +18,20 @@ function Searchbar() {
 
       
 
-      <div className="flex items-center gap-7 justify-between ">
-        <div className="flex items-center gap-2 border px-5 py-1 rounded-md bg-[#F6F6F8] h-8 justify-between">
+      <div className="flex items-center gap-7 justify-between">
+
+
+        <div className="flex items-center gap-2 border px-2 py-1 rounded-md text-black bg-[#e5e7eb] h-9 justify-between">
         <img src="/icons/search.png" alt="search" className="w-4 h-4" />
-        <input
+        <input 
           type="text"
           placeholder="Search data..."
           className="outline-none"
         />
       </div>
+
+
+      
         <img
           onClick={onLightModeClick}
           src={lightMode ? "/icons/lightmode.png" : "/icons/darkmode.png"}
